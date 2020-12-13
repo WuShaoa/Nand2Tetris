@@ -1,0 +1,10 @@
+/*与或非门*/
+CHIP NAR{
+    IN a,b,i,j;
+    OUT out;
+    PARTS:
+    And(a = a,b = b,out = c1);
+    And(a = i,b = j,out = c2);
+    Or(a = c1,b = c2,out = o);
+    Not(in=o, out=out);
+}

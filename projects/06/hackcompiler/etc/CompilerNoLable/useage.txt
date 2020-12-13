@@ -1,0 +1,4 @@
+> .\HackCompiler.exe //<path>//<path>...//filename (no need .asm!)
+
+e.g.
+> .\HackCompiler.exe //pong//PongL

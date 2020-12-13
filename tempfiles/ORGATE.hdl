@@ -1,0 +1,8 @@
+CHIP ORGATE{
+    IN a,b;
+    OUT out;
+    PARTS:
+    Nand(a = a,b = true,out = c1);
+    Nand(a = b,b = true,out = c2);
+    Nand(a = c1,b = c2,out = out);
+}
