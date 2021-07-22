@@ -23,7 +23,7 @@ class Parser():
         function name nlocals
         call name nargs
         return
-'''
+    '''
     def __init__(self, path):
         self.command_tab = {
         "add"      : "C_ARITHMETIC",
@@ -68,7 +68,7 @@ class Parser():
     
     def hasMoreCommands(self):
         buf = self.rp.sub(' ', self.vmfile.readline()) # remove all comments
-        
+
         if buf == '':
             return False
         elif not buf.isspace():
