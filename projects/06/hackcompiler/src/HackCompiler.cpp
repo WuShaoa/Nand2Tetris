@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
         SymbolTable symboltable;
         
         Parser* preparser = new Parser(string(argv[1]));
-        int count = 0;
+        int count = 0;//here count refers to the addr in instruction mem
         while (preparser->hasMoreCommands()) {
             preparser->advance();
             ct = preparser->commandType();
@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
 
         Parser* parser = new Parser(string(argv[1]));
         Code coder;
-        count = 16;
+        count = 16;//here count refers to the addr in data mem, and MUST starts from 16 (because first 15 were already predefined)
         while (parser->hasMoreCommands()) {
             parser->advance();
             ct = parser->commandType();

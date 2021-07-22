@@ -1,0 +1,1 @@
+> python .\vmcompiler-7.py filepath
