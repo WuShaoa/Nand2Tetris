@@ -1,0 +1,4 @@
+> python .\vmcompiler-8.py dirpath
+
+e.g. >python .\vmcompiler-8.py .\FunctionCalls\StaticsTest\
+vm compiler will recursively search *.vm file and compile them into one file (StaticsTest.asm, this example respectively)
