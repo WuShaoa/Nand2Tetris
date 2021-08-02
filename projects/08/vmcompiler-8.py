@@ -25,15 +25,16 @@ def translate(parser, codewriter):
 
 if __name__ == "__main__":
     basename = sys.argv[1].split(os.path.sep)[-2] # if arg is a path    
-    cw = CodeWriter(os.path.join(sys.argv[1], basename), mode='a+')
+    cw = CodeWriter(os.path.join(sys.argv[1], basename), mode='a+') # remember the mode is a+!
     
     cw.writeInit()
     
+    # recursively search *.vm file and compile them into one file (basename.asm)
     for root, dirs, files in os.walk(sys.argv[1]):
         for file in files:
             if file.endswith(".vm"):
                 ps = Parser(os.path.join(root, file))
-                cw.classname = ps.filename # make sure the static variables' scope independent among classis
+                cw.classname = ps.filename # make sure the static variables' scope independent among classis (files)
                 translate(ps, cw)
                 ps.close()
     
